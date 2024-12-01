@@ -1,7 +1,3 @@
-Here’s the updated README with a `src` directory included in the file structure:
-
----
-
 # 🎄 Advent of Code 2024 🎄  
 
 Welcome to my **Advent of Code 2024** repository! This is where I’ll be solving daily programming challenges using Java throughout December.  
