@@ -6,27 +6,27 @@ import java.util.ArrayList;
 
 public class part2 {
     public static void main(String[] args) throws FileNotFoundException {
-        int counter = 0;
-        FileReader fr = new FileReader("src/Day2/input.txt", " ");
-        ArrayList<ArrayList<String>> rows = fr.getRows();
-        for (ArrayList<String> row : rows){
-            for (int  i= 0; i < row.size(); i++) {
-                ArrayList<String> subList = new ArrayList<>(row);
-                subList.remove(i);
-                if(safe(subList)){
-                    counter++;
+        int res = 0;
+        FileReader<Integer> fr = new FileReader<>("src/Day2/input.txt", " ", Integer.class);
+        ArrayList<ArrayList<Integer>> rows = fr.getRows();
+        for (ArrayList<Integer> row : rows){
+            for (int i=0; i < row.size(); i++) {
+                ArrayList<Integer> subRow = new ArrayList<>(row);
+                subRow.remove(i);
+                if(safe(subRow)){
+                    res++;
                     break;
                 }
             }
         }
-        System.out.println(counter);
+        System.out.println(res);
     }
-    public static boolean safe(ArrayList<String> row) {
-        boolean asc = Integer.parseInt(row.get(0)) < Integer.parseInt(row.get(1));
+    public static boolean safe(ArrayList<Integer> row) {
+        boolean asc = row.get(0) < row.get(1);
 
         for (int i = 1; i < row.size(); i++) {
-            int num = Integer.parseInt(row.get(i));
-            int prev = Integer.parseInt(row.get(i - 1));
+            int num = row.get(i);
+            int prev = row.get(i - 1);
             int diff = Math.abs(prev - num);
 
             if ((asc && prev > num) || (!asc && prev < num) || diff < 1 || diff > 3) {

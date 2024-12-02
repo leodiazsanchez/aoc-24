@@ -1,37 +1,24 @@
 package Day1;
 
-import java.io.File;
+import Utils.FileReader;
 import java.io.FileNotFoundException;
-import java.util.Scanner;
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class part1 {
-    public static void main(String[] args) {
-        int i = 0;
-        int[] left = new int[1000];
-        int[] right = new int[1000];
-        try {
-            File input = new File("src/Day1/input.txt");
-            Scanner reader = new Scanner(input);
-            while (reader.hasNextLine()) {
-                String data = reader.nextLine();
-                String[] arr = data.split("\\s+");
-                left[i] = Integer.parseInt(arr[0]);
-                right[i] = Integer.parseInt(arr[1]);
-                i++;
-            }
+    public static void main(String[] args) throws FileNotFoundException {
+        FileReader<Integer> fr = new FileReader<>("src/Day1/input.txt", "\\s+", Integer.class);
+        ArrayList<ArrayList<Integer>> cols = fr.getCols(2);
+        ArrayList<Integer> left = cols.get(0);
+        ArrayList<Integer> right = cols.get(1);
 
-            Arrays.sort(left);
-            Arrays.sort(right);
-            int res = 0;
-            for (int j = 0; j < left.length; j++){
-                res += Math.abs(left[j] - right[j]);
-            }
-            System.out.println(res);
-            reader.close();
-        } catch (FileNotFoundException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
+        Collections.sort(left);
+        Collections.sort(right);
+
+        int res = 0;
+        for (int i = 0; i < left.size(); i++){
+            res += Math.abs(left.get(i) - right.get(i));
         }
+        System.out.println(res);
     }
 }
