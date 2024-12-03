@@ -31,6 +31,3 @@ To execute the solution for a specific day:
    ```bash  
    java src/Day2/part1.java  
    ```  
-
-## 🥇 Leaderboard AXIS 
-- [AXIS Leaderboard](https://adventofcode.com/2024/leaderboard/private/view/1499897)
