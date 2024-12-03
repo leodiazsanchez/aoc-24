@@ -1,12 +1,8 @@
-# 🎄 Advent of Code 2024 🎄  
+# Advent of Code 2024 🎄🌟
 
-Welcome to my **Advent of Code 2024** repository! This is where I’ll be solving daily programming challenges using Java throughout December.  
-
-## 🌟 About Advent of Code  
-Advent of Code is an annual series of programming puzzles created by [Eric Wastl](https://adventofcode.com/). Each day from December 1st to 25th, a new problem is released, designed to challenge and delight programmers of all levels.  
+Welcome to my **Advent of Code 2024** repository! 
 
 ## 📂 Repository Structure  
-Here’s how the repository is organized:  
 ```plaintext  
 ├── src/  
 │   ├── Day1/  
@@ -25,7 +21,7 @@ Here’s how the repository is organized:
 To execute the solution for a specific day:  
 1. Navigate to the appropriate day's directory under `src`.  
    ```bash  
-   cd src/day01  
+   cd src/Day1  
    ```  
 2. Compile the solution file.  
    ```bash  
