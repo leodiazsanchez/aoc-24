@@ -1,7 +1,4 @@
 # Advent of Code 2024 🎄🌟
-
-Welcome to my **Advent of Code 2024** repository! 
-
 ## 📂 Repository Structure  
 ```plaintext  
 ├── src/  
