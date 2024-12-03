@@ -10,18 +10,11 @@ import java.util.regex.Pattern;
 public class part2 {
     public static void main(String[] args) throws FileNotFoundException {
         FileReader<String> fr = new FileReader<>("src/Day3/input.txt", "", String.class);
-        ArrayList<ArrayList<String>> rows = fr.getRows();
+        String input = fr.getString();
 
         Pattern pattern = Pattern.compile("do\\(\\)|don't\\(\\)|mul\\(\\d+,\\d+\\)", Pattern.CASE_INSENSITIVE);
-
-        String input = "";
-        for (ArrayList<String> row: rows){
-            for (String str: row) {
-                input += str;
-            }
-        }
-
         Matcher matcher = pattern.matcher(input);
+
         int sum = 0;
         boolean exec = true;
 

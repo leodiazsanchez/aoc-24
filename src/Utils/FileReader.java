@@ -16,6 +16,14 @@ public class FileReader<T> {
         this.type = type;
     }
 
+    public String getString(){
+        String str = "";
+        while (reader.hasNextLine()){
+            str += reader.nextLine();
+        }
+        return str;
+    }
+
     public ArrayList<ArrayList<T>> getRows(){
         ArrayList<ArrayList<T>> arr = new ArrayList<>();
         while (reader.hasNextLine()){
