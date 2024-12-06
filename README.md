@@ -16,15 +16,11 @@
 
 ## 🛠️ How to Run  
 To execute the solution for a specific day:  
-1. Navigate to the appropriate day's directory under `src`.  
-   ```bash  
-   cd src/Day1  
-   ```  
-2. Compile the solution file.  
+1. Compile the solution file.  
    ```bash  
    javac src/Day1/part1.java  
    ```  
-3. Run the program.  
+2. Run the program.  
    ```bash  
    java src/Day2/part1.java  
    ```  
