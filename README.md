@@ -1,5 +1,5 @@
 # Advent of Code 2024
-## Repository Structure 📂 
+## Repository Structure 
 ```plaintext  
 ├── src/  
 │   ├── Day1/  
@@ -15,7 +15,7 @@
 └── .gitignore                 # Git ignore rules  
 ```  
 
-## How to Run 🚀
+## How to Build & Run
 To execute the solution for a specific day:  
 1. Compile the solution file.  
    ```bash  
