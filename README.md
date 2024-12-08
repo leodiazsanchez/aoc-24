@@ -1,20 +1,21 @@
-# Advent of Code 2024 🎄🌟
-## 📂 Repository Structure  
+# Advent of Code 2024
+## Repository Structure 📂 
 ```plaintext  
 ├── src/  
 │   ├── Day1/  
 │   │   ├── input.txt          # Puzzle input for Day 1  
 │   │   ├── part1.java         # Solution code for Day 1 (part1)
 │   │   ├── part2.java         # Solution code for Day 1 (part2)
-│   ├── Day2/  
-│   │   ├── input.txt          # Puzzle input for Day 2  
-│   │   ├── example.java       # Solution code for Day 2  
+│   ├── DayX/  
+│   │   ├── input.txt          # Puzzle input for Day X  
+│   │   ├── part1.java         # Solution code for Day X (part1)
+│   │   ├── part2.java         # Solution code for Day X (part2)  
 ├── README.md                  # You are here!
 ├── out/                       # Compiled class files  
 └── .gitignore                 # Git ignore rules  
 ```  
 
-## 🛠️ How to Run  
+## How to Run 🚀
 To execute the solution for a specific day:  
 1. Compile the solution file.  
    ```bash  
