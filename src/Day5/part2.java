@@ -26,8 +26,6 @@ public class part2 {
             }
         }
 
-        System.out.println("Rules: " + lookup);
-
         FileReader<Integer> fr2 = new FileReader<>("src/Day5/input2.txt", ",", Integer.class);
         ArrayList<ArrayList<Integer>> rows = fr2.getRows();
 
@@ -57,8 +55,8 @@ public class part2 {
             }
         }
 
-
         int sum = 0;
+
         for(ArrayList<Integer> s: successful){
             System.out.println(s);
             sum += s.get(s.size()/2);
@@ -70,8 +68,6 @@ public class part2 {
     public static boolean isValidRow(ArrayList<Integer> row, HashMap<Integer, ArrayList<Integer>> lookup ){
         for (Integer n : row){
             ArrayList<Integer> rule = lookup.get(n);
-            System.out.println("N: " + n);
-            System.out.println("Rule for n: " + rule);
             if(rule != null){
                 for (int r : rule) {
                     if (row.contains(r) && row.indexOf(r) > row.indexOf(n)) {

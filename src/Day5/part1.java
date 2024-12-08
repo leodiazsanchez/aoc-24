@@ -49,8 +49,6 @@ public class part1 {
     public static boolean isValidRow(ArrayList<Integer> row, HashMap<Integer, ArrayList<Integer>> lookup ){
         for (Integer n : row){
             ArrayList<Integer> rule = lookup.get(n);
-            System.out.println("N: " + n);
-            System.out.println("Rule for n: " + rule);
             if(rule != null){
                 for (int r : rule) {
                     if (row.contains(r) && row.indexOf(r) > row.indexOf(n)) {
