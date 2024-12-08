@@ -2,10 +2,6 @@
 ## Repository Structure 
 ```plaintext  
 ├── src/  
-│   ├── Day1/  
-│   │   ├── input.txt          # Puzzle input for Day 1  
-│   │   ├── part1.java         # Solution code for Day 1 (part1)
-│   │   ├── part2.java         # Solution code for Day 1 (part2)
 │   ├── DayX/  
 │   │   ├── input.txt          # Puzzle input for Day X  
 │   │   ├── part1.java         # Solution code for Day X (part1)
