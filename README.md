@@ -15,9 +15,9 @@
 To execute the solution for a specific day:  
 1. Compile the solution file.  
    ```bash  
-   javac src/Day1/part1.java  
+   javac src/DayX/part1.java  
    ```  
 2. Run the program.  
    ```bash  
-   java src/Day2/part1.java  
+   java src/DayX/part1.java  
    ```  
