@@ -10,28 +10,35 @@ public class part1 {
         FileReader<String> fr = new FileReader<>("src/Day11/input.txt", "", String.class);
         String input = fr.getString();
         ArrayList<Integer> arr = makeList(input);
-        blink(arr, 1);
-        System.out.println(arr);
+        ArrayList<Integer> arr2 = blink(arr, 25);
+        System.out.println(arr2.size());
     }
 
-    public static void blink(ArrayList<Integer> stones, int iterations){
+    public static ArrayList<Integer> blink(ArrayList<Integer> stones, int iterations){
         for (int i = 0; i < iterations; i++) {
-            for (int j = 0; j < stones.size(); j++) {
-                int stone = stones.get(j);
+            ArrayList<Integer> temp = new ArrayList<>();
+            for (int stone : stones) {
                 int nrOfDigits = String.valueOf(stone).length();
                 String stoneAsString = String.valueOf(stone);
-                if(stone == 0){
-                    stones.set(j, 1);
-                } else if(nrOfDigits % 2 == 0){
-                    int left = Integer.parseInt(stoneAsString.substring(0, (stoneAsString.length()/2)));
-                    int right =  Integer.parseInt(stoneAsString.substring(stoneAsString.length()/2));
-                    stones.set(j, left);
-                    stones.set(j+1, right);
+                if (stone == 0) {
+                    temp.add(1);
+                } else if (nrOfDigits % 2 == 0) {
+                    int left = Integer.parseInt(stoneAsString.substring(0, (stoneAsString.length() / 2)));
+                    int right = Integer.parseInt(stoneAsString.substring(stoneAsString.length() / 2));
+                    temp.add(left);
+                    temp.add(right);
                 } else {
-                    stones.set(j, stone*2024);
+                    temp.add(stone * 2024);
                 }
+                stones = temp;
+            }
+
+            if(i == iterations-1){
+                return temp;
             }
         }
+
+        return new ArrayList<>();
     }
 
     public static ArrayList<Integer> makeList(String str){
