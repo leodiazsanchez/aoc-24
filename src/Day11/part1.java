@@ -3,49 +3,44 @@ package Day11;
 import Utils.FileReader;
 
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
+import java.math.BigInteger;
+import java.util.LinkedList;
 
 public class part1 {
     public static void main(String[] args) throws FileNotFoundException {
         FileReader<String> fr = new FileReader<>("src/Day11/input.txt", "", String.class);
         String input = fr.getString();
-        ArrayList<Integer> arr = makeList(input);
-        ArrayList<Integer> arr2 = blink(arr, 25);
-        System.out.println(arr2.size());
+        LinkedList<BigInteger> arr = makeList(input);
+        blink(arr, 25);
+        System.out.println(arr.size());
     }
 
-    public static ArrayList<Integer> blink(ArrayList<Integer> stones, int iterations){
+    public static void blink(LinkedList<BigInteger> stones, int iterations) {
         for (int i = 0; i < iterations; i++) {
-            ArrayList<Integer> temp = new ArrayList<>();
-            for (int stone : stones) {
-                int nrOfDigits = String.valueOf(stone).length();
-                String stoneAsString = String.valueOf(stone);
-                if (stone == 0) {
-                    temp.add(1);
+            int size = stones.size();
+            for (int j = 0; j < size; j++) {
+                BigInteger stone = stones.poll();
+                int nrOfDigits = stone.toString().length();
+                String stoneAsString = stone.toString();
+                if (stone.equals(BigInteger.ZERO)) {
+                    stones.add(BigInteger.ONE);
                 } else if (nrOfDigits % 2 == 0) {
-                    int left = Integer.parseInt(stoneAsString.substring(0, (stoneAsString.length() / 2)));
-                    int right = Integer.parseInt(stoneAsString.substring(stoneAsString.length() / 2));
-                    temp.add(left);
-                    temp.add(right);
+                    BigInteger left = new BigInteger(stoneAsString.substring(0, stoneAsString.length() / 2));
+                    BigInteger right = new BigInteger(stoneAsString.substring(stoneAsString.length() / 2));
+                    stones.add(left);
+                    stones.add(right);
                 } else {
-                    temp.add(stone * 2024);
+                    stones.add(stone.multiply(BigInteger.valueOf(2024)));
                 }
-                stones = temp;
-            }
-
-            if(i == iterations-1){
-                return temp;
             }
         }
-
-        return new ArrayList<>();
     }
 
-    public static ArrayList<Integer> makeList(String str){
+    public static LinkedList<BigInteger> makeList(String str) {
         String[] a = str.split(" ");
-        ArrayList<Integer> arr = new ArrayList<>();
-        for (int i = 0; i < a.length; i++) {
-            arr.add(Integer.valueOf(a[i]));
+        LinkedList<BigInteger> arr = new LinkedList<>();
+        for (String s : a) {
+            arr.add(new BigInteger(s));
         }
         return arr;
     }
