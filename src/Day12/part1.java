@@ -37,7 +37,7 @@ public class part1 {
     {
         String startValue = map.get(start.y).get(start.x);
         int area = 0;
-        int edge = 0;
+        int edges = 0;
 
         Queue<Tuple<Integer,Integer>> q = new LinkedList<>();
 
@@ -80,10 +80,10 @@ public class part1 {
                     visited.add(adj);
                 }
             }
-            edge += localEdges;
+            edges += localEdges;
         }
 
-        Tuple values = new Tuple<>(area, edge);
+        Tuple values = new Tuple<>(area, edges);
         Tuple record = new Tuple<>(startValue,values);
         gardenStuff.add(record);
     }
