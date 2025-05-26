@@ -7,7 +7,6 @@
 │   │   ├── part1.java         # Solution code for Day X (part1)
 │   │   ├── part2.java         # Solution code for Day X (part2)  
 ├── README.md                  # You are here!
-├── out/                       # Compiled class files  
 └── .gitignore                 # Git ignore rules  
 ```  
 
